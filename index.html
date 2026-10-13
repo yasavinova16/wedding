@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Приглашение на свадьбу Дмитрия и Дарьи — 26 ноября 2026 года">
+  <title>Юрий & Ярослава — Приглашение на свадьбу</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="page">
+    <!-- Первый экран -->
+    <section class="section hero" id="home">
+      <div class="hero__content">
+        <p class="eyebrow">Приглашение на свадьбу</p>
+        <h1 class="hero__names">Юрий <span>&amp;</span> Ярослава</h1>
+        <p class="hero__month">ноябрь</p>
+        <p class="hero__date">26</p>
+        <p class="hero__year">2026</p>
+      </div>
+    </section>
+
+    <!-- Обращение к гостям -->
+    <section class="section invitation" id="invitation">
+      <div class="section__inner">
+        <div class="ornament" aria-hidden="true"></div>
+        <h2>Родные и близкие!</h2>
+        <p class="script-title">Мы женимся!</p>
+        <p>С большой радостью приглашаем вас на празднование самого важного события в нашей жизни — дня нашей свадьбы!</p>
+        <p class="invitation__date">26 ноября 2026</p>
+        <p>Мы очень хотим, чтобы в этот день с нами рядом были самые дорогие нам люди.</p>
+        <div class="ornament" aria-hidden="true"></div>
+      </div>
+    </section>
+
+    <!-- Программа дня -->
+    <section class="section schedule" id="schedule">
+      <div class="section__inner">
+        <h2>Время</h2>
+        <p class="script-title">Программа дня</p>
+        <div class="schedule__list">
+          <div class="schedule__item"><div class="schedule__time"><strong>12:55</strong><span>Церемония</span></div><p>Важные слова и искренние эмоции.</p></div>
+          <div class="schedule__item"><div class="schedule__time"><strong>17:00</strong><span>welcome</span></div><p>Прибытие и заселение гостей.</p></div>
+          <div class="schedule__item"><div class="schedule__time"><strong>18:00</strong><span>банкет</span></div><p>Начало торжества, ужин на шведской линии в ресторане отеля.</p></div>
+          <div class="schedule__item"><div class="schedule__time"><strong> 14:00</strong><span>27.11.2026</span></div><p>Выезд гостей.</p></div>
+        </div>
+        <div class="monogram">Ю &amp; Я</div>
+      </div>
+    </section>
+
+    <!-- Место проведения -->
+    <section class="section location" id="location">
+      <div class="section__inner">
+        <h2>Локация</h2>
+        <p class="script-title">Место проведения</p>
+        <p class="eyebrow">Будем ждать вас по адресу:</p>
+        <address>Московская область, Богородский городской округ, Новая Купавна, местечко Родинки<br>Сиреневая улица, 21 стр. 1<br>Отель "Ареал"</address>
+        <a class="outline-button" href="https://vk.ru/away.php?to=https%3A%2F%2Fwww.areal-hotel.ru%2F%3Fysclid%3Dmv6ttgav1876334604&utf=1" target="_blank" rel="noopener noreferrer">Забронировать номер</a>
+      </div>
+    </section>
+
+    <!-- Ответы на вопросы -->
+    <section class="section questions" id="questions">
+      <div class="section__inner">
+        <p class="script-title">Пожелания</p>
+        <h2>Вопросы и ответы</h2>
+        <article class="faq"><h3>Где будет проходить церемония бракосочетания?</h3><p>Регистрация брака будет проходить по адресу: г. Москва, Шипиловский проезд, д. 27</p></article>
+        <article class="faq"><h3>Что дарить?</h3><p>Самый главный подарок — ваше присутствие. Если вы планируете подарок, будем благодарны за денежный вклад в наше совместное будущее.</p></article>
+      </div>
+    </section>
+
+    <!-- Обратный отсчёт -->
+    <section class="section countdown-section" id="countdown">
+      <div class="section__inner">
+        <p class="script-title">До скорой встречи!</p>
+        <h2>До свадьбы осталось</h2>
+        <p class="countdown__subtitle">совсем немного времени</p>
+        <div class="countdown" aria-live="off">
+          <div class="countdown__unit"><span id="days">00</span><small>дней</small></div>
+          <span class="countdown__colon">:</span>
+          <div class="countdown__unit"><span id="hours">00</span><small>часов</small></div>
+          <span class="countdown__colon">:</span>
+          <div class="countdown__unit"><span id="minutes">00</span><small>минут</small></div>
+          <span class="countdown__colon">:</span>
+          <div class="countdown__unit"><span id="seconds">00</span><small>секунд</small></div>
+        </div>
+        <p id="countdown-finished" class="countdown__finished" hidden>Этот день настал!</p>
+        <div class="monogram">Ю &amp; Я</div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Скрипт встроен в HTML, отдельный JS-файл не нужен -->
+  <script>
+    'use strict';
+
+    // 26 ноября 2026 года, 16:30 по московскому времени (UTC+3).
+    const weddingDate = new Date('2026-11-26T16:30:00+03:00').getTime();
+    const countdownFields = {
+      days: document.getElementById('days'),
+      hours: document.getElementById('hours'),
+      minutes: document.getElementById('minutes'),
+      seconds: document.getElementById('seconds')
+    };
+
+    function updateCountdown() {
+      const remaining = Math.max(0, weddingDate - Date.now());
+      const totalSeconds = Math.floor(remaining / 1000);
+      const days = Math.floor(totalSeconds / 86400);
+      const hours = Math.floor((totalSeconds % 86400) / 3600);
+      const minutes = Math.floor((totalSeconds % 3600) / 60);
+      const seconds = totalSeconds % 60;
+
+      countdownFields.days.textContent = String(days).padStart(2, '0');
+      countdownFields.hours.textContent = String(hours).padStart(2, '0');
+      countdownFields.minutes.textContent = String(minutes).padStart(2, '0');
+      countdownFields.seconds.textContent = String(seconds).padStart(2, '0');
+
+      if (remaining === 0) {
+        document.getElementById('countdown-finished').hidden = false;
+        clearInterval(countdownInterval);
+      }
+    }
+
+    const countdownInterval = setInterval(updateCountdown, 1000);
+    updateCountdown();
+
+    // Демонстрационная форма: не отправляет данные на сервер.
+    document.getElementById('guest-form').addEventListener('submit', function (event) {
+      event.preventDefault();
+      document.getElementById('form-message').textContent =
+        'Ответ заполнен. Для настоящей отправки нужно подключить обработчик формы.';
+    });
+  </script>
+</body>
+</html>

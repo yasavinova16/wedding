@@ -1,0 +1,97 @@
+/* ===== Основные настройки ===== */
+:root {
+  --text: #57534f;
+  --muted: #8d8780;
+  --line: rgba(110, 104, 98, 0.35);
+  --paper: #fbfaf8;
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body { margin: 0; color: var(--text); background: #e9e6e2; font-family: 'Cormorant Garamond', Georgia, serif; }
+a { color: inherit; }
+button, input, select { font: inherit; }
+
+/* ===== Вертикальный лендинг ===== */
+.page { width: min(100%, 650px); margin: 0 auto; overflow: hidden; box-shadow: 0 0 80px #a5a09a33; }
+.section { min-height: 650px; padding: 95px 34px; display: flex; align-items: center; justify-content: center; text-align: center; position: relative; }
+.section__inner { position: relative; z-index: 1; width: min(100%, 450px); margin: auto; }
+
+/* Мягкая фактура ткани, без внешних изображений */
+.hero, .invitation, .location, .rsvp, .countdown-section {
+  background-color: #f3f0eb;
+  background-image:
+    radial-gradient(ellipse 65% 18% at 18% 25%, #fff 0%, #ffffff00 85%),
+    radial-gradient(ellipse 75% 30% at 92% 70%, #d4d0cba8 0%, #ffffff00 78%),
+    linear-gradient(145deg, #eeeae5 4%, #fff 24%, #e5e1dc 40%, #fff 57%, #e1dcd5 75%, #fdfbf8 92%);
+  background-size: cover;
+}
+.schedule, .questions { background: var(--paper); }
+
+/* ===== Типографика ===== */
+h1, h2, h3, p { margin-top: 0; }
+h2 { margin-bottom: 5px; font-size: clamp(34px, 6vw, 48px); font-weight: 400; letter-spacing: .08em; text-transform: uppercase; }
+h3 { font-size: 26px; font-weight: 500; margin-bottom: 5px; }
+p { font-size: 23px; line-height: 1.32; }
+.eyebrow { font-size: 18px; letter-spacing: .13em; text-transform: uppercase; }
+.script-title { font-family: 'Great Vibes', cursive; font-size: clamp(35px, 8vw, 52px); color: #a49d95; line-height: 1; margin-bottom: 38px; }
+.ornament { height: 65px; width: 1px; margin: 0 auto 34px; background: var(--line); }
+.ornament:last-child { margin: 36px auto 0; }
+.monogram { margin-top: 60px; font-family: 'Great Vibes', cursive; font-size: 32px; color: #aaa39c; }
+
+/* ===== Первый экран ===== */
+.hero { min-height: 100svh; }
+.hero__content { width: 100%; }
+.hero__names { margin: 75px auto 85px; max-width: 480px; font-size: clamp(52px, 10vw, 78px); font-weight: 400; line-height: .9; text-transform: uppercase; }
+.hero__names span { display: block; margin: 10px 0; font-family: 'Great Vibes', cursive; font-size: 60px; font-weight: 400; text-transform: none; color: #a8a09a; }
+.hero__month, .hero__year { margin: 0; font-size: 25px; }
+.hero__date { margin: 0; font-size: 64px; line-height: 1; }
+
+/* ===== Приглашение ===== */
+.invitation__date { font-size: 39px; text-transform: uppercase; margin: 50px 0 30px; }
+
+/* ===== Программа ===== */
+.schedule__list { margin-top: 55px; }
+.schedule__item { display: grid; grid-template-columns: 120px 1fr; gap: 18px; align-items: center; text-align: left; margin: 30px 0; }
+.schedule__time { text-align: right; }
+.schedule__time strong { display: block; font-size: 43px; font-style: italic; font-weight: 400; line-height: 1; }
+.schedule__time span { font-size: 17px; }
+.schedule__item p { border-left: 1px solid var(--line); padding-left: 18px; margin: 0; font-size: 18px; }
+
+/* ===== Место проведения ===== */
+.location address { font-size: 26px; font-style: normal; line-height: 1.4; margin: 30px 0; }
+.outline-button { display: inline-block; padding: 13px 26px; border: 1px solid #c6c0b9; border-radius: 50px; background: #ffffff99; text-decoration: none; font-size: 20px; color: var(--text); cursor: pointer; transition: background .2s; }
+.outline-button:hover { background: #fff; }
+
+/* ===== Вопросы ===== */
+.faq { text-align: left; margin: 35px auto; max-width: 360px; }
+.faq p { font-size: 19px; }
+
+/* ===== Форма гостя ===== */
+.guest-form { max-width: 350px; margin: 45px auto 0; display: flex; flex-direction: column; gap: 10px; text-align: left; }
+.guest-form label { font-size: 19px; }
+.guest-form input, .guest-form select { padding: 12px; border: 1px solid #d7d2cc; background: #ffffffc9; color: var(--text); font-size: 18px; border-radius: 0; }
+.guest-form button { align-self: center; margin-top: 22px; }
+.form-message { margin: 15px 0 0; font-size: 17px; text-align: center; }
+
+/* ===== Таймер ===== */
+.countdown-section { min-height: 620px; }
+.countdown__subtitle { font-size: 27px; margin-bottom: 38px; }
+.countdown { display: flex; justify-content: center; align-items: flex-start; gap: 7px; }
+.countdown__unit { min-width: 62px; display: flex; flex-direction: column; align-items: center; }
+.countdown__unit > span { font-size: clamp(34px, 8vw, 62px); line-height: 1; font-variant-numeric: tabular-nums; }
+.countdown__unit small { margin-top: 8px; font-size: 16px; }
+.countdown__colon { font-size: clamp(30px, 7vw, 54px); line-height: .85; }
+.countdown__finished { margin-top: 25px; }
+
+/* ===== Телефон ===== */
+@media (max-width: 480px) {
+  .section { min-height: 580px; padding: 70px 22px; }
+  .hero { min-height: 100svh; }
+  p { font-size: 21px; }
+  .schedule__item { grid-template-columns: 100px 1fr; gap: 10px; }
+  .schedule__time strong { font-size: 35px; }
+  .schedule__item p { font-size: 17px; padding-left: 12px; }
+  .countdown__unit { min-width: 48px; }
+  .countdown { gap: 3px; }
+}
